@@ -1,0 +1,209 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    direction: rtl;
+    background-color: #0a0a0a;
+    color: #ffffff;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    transition: all 0.3s ease;
+  }
+  
+  .navbar.scrolled {
+    background-color: rgba(10, 10, 10, 0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    right: 0;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+  
+  .mobile-menu {
+    transform: translateX(100%);
+  }
+  
+  .mobile-menu.active {
+    transform: translateX(0);
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: rgba(3, 1, 19, 0.95);
+  }
+  
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 0;
+  }
+  
+  .text-content {
+    opacity: 1;
+  }
+  
+  .profile-img-wrapper img {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+  
+  .glow-frame {
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .glow-frame:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.7);
+  }
+  
+  .glow-btn {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  
+  .glow-btn:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+    background: linear-gradient(to right, #3b82f6, #1e40af);
+  }
+  
+  .pulse-btn {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Social Icons */
+  .social-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Services, Industries, Tools, Why Choose Me, My Process, Testimonials, FAQ Sections */
+  .service-card, .industry-card, .tool-item, .feature-card, .process-card, .testimonial-card, .faq-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card:hover, .industry-card:hover, .feature-card:hover, .process-card:hover, .testimonial-card:hover, .faq-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .pulse-icon {
+    animation: pulseIcon 2s infinite;
+  }
+  
+  @keyframes pulseIcon {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  
+  /* FAQ Section */
+  .faq-question:hover {
+    color: #3b82f6;
+  }
+  
+  .faq-question i.rotate {
+    transform: rotate(180deg);
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  /* CTA Section */
+  #cta a {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  
+  #cta a:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+  }
+  
+  /* Footer */
+  .back-to-top {
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .back-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .back-to-top:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Animations */
+  @keyframes slideIn {
+    from { transform: translateY(20px); }
+    to { transform: translateY(0); }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .hero {
+      text-align: center;
+    }
+  
+    .text-content, .profile-img-wrapper {
+      width: 100%;
+    }
+  
+    .profile-img-wrapper img {
+      width: 60%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+  
+    .mobile-menu {
+      width: 100%;
+    }
+  
+    .social-icon {
+      font-size: 1.5rem;
+    }
+  
+    .tool-item {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

@@ -1,0 +1,299 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    direction: rtl;
+    background-color: #0a0a0a;
+    color: #ffffff;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    transition: all 0.3s ease;
+  }
+  
+  .navbar.scrolled {
+    background-color: rgba(10, 10, 10, 0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    right: 0;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+  
+  /* Custom Hamburger Icon (Fallback) */
+  .hamburger .custom-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .hamburger .custom-hamburger .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Show custom hamburger if Font Awesome fails */
+  .hamburger i:not(.fa-bars) + .custom-hamburger,
+  .hamburger i.fa-bars[style*="display: none"] + .custom-hamburger {
+    display: flex;
+  }
+  
+  .hamburger:hover {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+  }
+  
+  .mobile-menu {
+    transform: translateX(100%);
+    z-index: 50;
+  }
+  
+  .mobile-menu.active {
+    transform: translateX(0);
+  }
+  
+  .close-menu {
+    z-index: 60;
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: rgba(3, 1, 19, 0.95);
+  }
+  
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 0;
+  }
+  
+  .glow-btn {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  
+  .glow-btn:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+    background: linear-gradient(to right, #3b82f6, #1e40af);
+  }
+  
+  .pulse-btn {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Social Icons */
+  .social-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Projects Section */
+  .filter-btn {
+    transition: all 0.3s ease;
+  }
+  
+  .filter-btn.active {
+    background-color: #3b82f6;
+  }
+  
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .project-card img {
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Project Stats & Achievements Section */
+  .stat-card, .achievement-card, .award-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .stat-card:hover, .achievement-card:hover, .award-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .pulse-icon {
+    animation: pulseIcon 2s infinite;
+  }
+  
+  @keyframes pulseIcon {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Behind the Scenes Section */
+  .scene-card img {
+    transition: transform 0.3s ease;
+  }
+  
+  .scene-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* CTA Section */
+  #cta a {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  
+  #cta a:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+  }
+  
+  /* Footer */
+  .back-to-top {
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .back-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .back-to-top:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Animations */
+  @keyframes slideIn {
+    from { transform: translateY(20px); }
+    to { transform: translateY(0); }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .hero {
+      text-align: center;
+      min-height: 80vh;
+    }
+  
+    #particles-js {
+      display: none;
+    }
+  
+    .mobile-menu {
+      width: 100%;
+    }
+  
+    .hamburger {
+      display: block !important;
+    }
+  
+    .social-icon {
+      font-size: 1.5rem;
+    }
+  
+    .filter-btn {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  
+    .project-card img, .scene-card img {
+      height: 160px;
+    }
+  
+    .project-card h3, .scene-card h3 {
+      font-size: 1.1rem;
+    }
+  
+    .project-card p, .scene-card p {
+      font-size: 0.9rem;
+    }
+  
+    .stat-card, .achievement-card, .award-card {
+      padding: 1.5rem;
+    }
+  
+    .stat-card i, .achievement-card i, .award-card i {
+      font-size: 2.5rem;
+    }
+  
+    .stat-card h3, .achievement-card h3, .award-card h3 {
+      font-size: 1.5rem;
+    }
+  
+    .stat-card p, .achievement-card p, .award-card p {
+      font-size: 0.9rem;
+    }
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero p {
+      font-size: 0.9rem;
+    }
+  
+    .glow-btn {
+      padding: 0.5rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }

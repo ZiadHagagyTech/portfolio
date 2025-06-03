@@ -1,0 +1,232 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+/* Theme Styles */
+body[data-theme="dark"] {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+body[data-theme="light"] {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+body[data-theme="light"] .bg-gray-950 { background-color: #ffffff; }
+body[data-theme="light"] .bg-gray-900 { background-color: #f3f4f6; }
+body[data-theme="light"] .bg-gray-800 { background-color: #e5e7eb; }
+body[data-theme="light"] .text-white { color: #1f2937; }
+body[data-theme="light"] .text-gray-400 { color: #4b5563; }
+body[data-theme="light"] .navbar { background-color: #ffffff; }
+body[data-theme="light"] .mobile-menu { background-color: #f3f4f6; }
+body[data-theme="light"] .theme-toggle { background-color: #e5e7eb; }
+body[data-theme="light"] .theme-toggle i { color: #1f2937; }
+body[data-theme="light"] .back-to-top { background-color: #2563eb; }
+
+/* Navbar Styles */
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(10, 10, 10, 0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  right: 0;
+  background-color: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.mobile-menu {
+  transform: translateX(100%);
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: rgba(3, 1, 19, 0.95);
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.text-content {
+  opacity: 1;
+}
+
+.profile-img-wrapper img {
+  opacity: 1;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.glow-frame {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-frame:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.7);
+}
+
+.glow-btn {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.glow-btn:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+}
+
+.pulse-btn {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Social Icons */
+.social-icon {
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+}
+
+/* Who Am I Section */
+#who-am-i {
+  background: linear-gradient(to right, #0a0a0a, #1e3a8a);
+}
+
+#who-am-i img {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+#who-am-i .pulse-icon {
+  animation: pulseIcon 2s infinite;
+}
+
+/* Education, Experience, Vision, Achievements Sections */
+.education-item, .experience-item, .vision-card, .achievement-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 1;
+}
+
+.tilt-card:hover {
+  transform: translateY(-10px);
+}
+
+.pulse-icon {
+  animation: pulseIcon 2s infinite;
+}
+
+@keyframes pulseIcon {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Skills Section */
+.skill-progress {
+  transition: width 1s ease-in-out;
+}
+
+/* CTA Section */
+#cta a {
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+#cta a:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+}
+
+/* Footer */
+.back-to-top {
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero, #who-am-i {
+    text-align: center;
+  }
+
+  .text-content, .profile-img-wrapper {
+    width: 100%;
+  }
+
+  .profile-img-wrapper img, #who-am-i img {
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .mobile-menu {
+    width: 100%;
+  }
+
+  .social-icon {
+    font-size: 1.5rem;
+  }
+}

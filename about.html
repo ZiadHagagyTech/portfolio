@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Ziad Hagagy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- GSAP, Typed.js, Particles.js, and Vanilla Tilt -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2 EGFR.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
+  <link rel="icon" href="./img/ziad.png" type="image/png">
+  <link rel="stylesheet" href="about.css">
+</head>
+<body class="bg-gray-950 text-white dark-mode" data-theme="dark">
+  <!-- Theme Toggle -->
+  <!-- <button class="theme-toggle fixed top-4 left-4 z-50 p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors hidden lg:block">
+    <i class="fas fa-moon text-xl text-white"></i>
+  </button> -->
+
+  <!-- Navbar -->
+  <nav class="navbar fixed top-0 left-0 w-full z-40 py-4 bg-gray-950 bg-opacity-80 backdrop-blur-md transition-all duration-300">
+    <div class="container mx-auto px-4 max-w-7xl flex justify-between items-center">
+      <a href="index.html" class="relative flex items-center logo">
+        <span class="text-3xl font-bold text-white hover:text-blue-500 transition-transform duration-300">Ziad Hagagy</span>
+      </a>
+      <ul class="hidden lg:flex space-x-8 space-x-reverse items-center">
+        <li><a href="index.html" class="nav-link text-white hover:text-blue-500 transition-all duration-300 relative">الرئيسية</a></li>
+        <li><a href="about.html" class="nav-link text-blue-500 hover:text-blue-500 transition-all duration-300 relative font-bold">نبذة عني</a></li>
+        <li><a href="services.html" class="nav-link text-white hover:text-blue-500 transition-all duration-300 relative">الخدمات</a></li>
+        <li><a href="projects.html" class="nav-link text-white hover:text-blue-500 transition-all duration-300 relative">أعمالي</a></li>
+        <li><a href="contact.html" class="nav-link text-white hover:text-blue-500 transition-all duration-300 relative">التواصل</a></li>
+        <li><a href="evaluation.html" class="nav-link text-white hover:text-blue-500 transition-all duration-300 relative">التقييم</a></li>
+      </ul>
+      <button class="hamburger lg:hidden text-white focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+      <div class="mobile-menu fixed top-0 right-0 w-full sm:w-3/4 h-full bg-gray-900 p-8 transform translate-x-full transition-transform duration-500 lg:hidden z-50">
+        <button class="close-menu text-white focus:outline-none mb-8">
+          <i class="fas fa-times text-2xl"></i>
+        </button>
+        <ul class="flex flex-col space-y-6 bg-gray-700 p-4 rounded-lg"> <!-- اللون الرمادي هنا -->
+          <li><a href="index.html" class="nav-link text-white hover:text-blue-500 text-lg font-semibold">الرئيسية</a></li>
+          <li><a href="about.html" class="nav-link text-blue-500 hover:text-blue-500 text-lg font-semibold">نبذة عني</a></li>
+          <li><a href="services.html" class="nav-link text-white hover:text-blue-500 text-lg font-semibold">الخدمات</a></li>
+          <li><a href="projects.html" class="nav-link text-white hover:text-blue-500 text-lg font-semibold">أعمالي</a></li>
+          <li><a href="contact.html" class="nav-link text-white hover:text-blue-500 text-lg font-semibold">التواصل</a></li>
+          <li><a href="evaluation.html" class="nav-link text-white hover:text-blue-500 text-lg font-semibold">التقييم</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="about-hero" class="hero min-h-screen flex items-center relative overflow-hidden">
+    <div id="particles-js" class="absolute inset-0 z-0"></div>
+    <div class="container mx-auto px-4 max-w-7xl flex flex-col lg:flex-row items-center justify-between relative z-10">
+      <div class="text-content lg:w-1/2 text-center lg:text-right mb-12 lg:mb-0">
+        <p class="text-lg text-green-500 mb-4">تعرف عليّ</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">زياد حجاجي</h1>
+        <p class="text-xl text-gray-300 mb-6">
+          <span id="typed-text" class="font-semibold text-blue-500"></span>
+        </p>
+        <p class="text-base sm:text-lg text-gray-400 mb-8 max-w-md mx-auto lg:mx-0">
+          مطور واجهات أمامية ، أساعد العلامات التجارية في تحويل أفكارها إلى مواقع إلكترونية متجاوبة ومتميزة، بخبرة عملية تمتد لأكثر من ثلاث أعوام.        </p>
+        <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
+          <a href="contact.html" class="bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-600 transition-all duration-300 glow-btn pulse-btn">
+            تواصل معي
+          </a>
+          <a href="projects.html" class="border-2 border-blue-500 text-blue-500 px-6 py-3 rounded-full font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 glow-btn flex items-center justify-center">
+            استعرض أعمالي
+            <i class="fas fa-arrow-left ml-2"></i>
+          </a>
+        </div>
+      </div>
+      <div class="lg:w-1/2 flex justify-center">
+        <div class="relative profile-img-wrapper">
+          <img src="./img/ziad.jpg" alt="صورة زياد حجاجي" class="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-blue-500 glow-frame">
+        </div>
+      </div>
+    </div>
+    <!-- Social Icons -->
+    <div class="fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4 z-20">
+      <a href="https://www.linkedin.com/in/ziad-hagagy/" class="social-icon text-gray-400 hover:text-blue-500 transition-all duration-300">
+        <i class="fab fa-linkedin text-2xl"></i>
+      </a>
+      <a href="https://www.facebook.com/ZiadHassaann" class="social-icon text-gray-400 hover:text-blue-500 transition-all duration-300">
+        <i class="fa-brands fa-facebook text-2xl"></i>
+      </a>
+      <a href="https://wa.me/+201027888008" class="social-icon text-gray-400 hover:text-blue-500 transition-all duration-300">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Who Am I Section -->
+  <section id="who-am-i" class="py-16 bg-gradient-to-r from-gray-950 to-blue-950">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-4xl font-bold text-white mb-4 text-center">من أنا؟</h2>
+      <p class="text-lg text-gray-400 mb-12 text-center max-w-2xl mx-auto">
+        مطور واجهات أمامية ومصمم UI/UX شغوف بتحويل الأفكار إلى تجارب رقمية مبتكرة.
+      </p>
+      <div class="flex flex-col lg:flex-row items-center justify-between">
+        <div class="lg:w-1/2 mb-8 lg:mb-0">
+          <img src="./img/ziad.jpg" alt="زياد حجاجي" class="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-lg object-cover mx-auto border-4 border-blue-500 glow-frame animate-slide-in">
+        </div>
+        <div class="lg:w-1/2 text-center lg:text-right">
+          <p class="text-lg text-gray-300 mb-6 animate-slide-in">
+            أنا زياد حجاجي، مصمم ومطور واجهات أمامية، شغوف بابتكار تجارب رقمية فريدة ومتميزة. حاصل على درجة البكالوريوس في تكنولوجيا التعليم والمعلومات، وأمتلك خبرة تمتد لأكثر من ثلاث أعوام في مجال تصميم وتطوير المواقع الإلكترونية.
+
+            أتميز بقدرتي على تحويل الأفكار إلى مواقع واقعية تجمع بين الجاذبية البصرية وسهولة الاستخدام. أستخدم أحدث تقنيات الويب مثل HTML، CSS، JavaScript، Bootstrap ، Wordpress وأحرص على تطبيق مبادئ تصميم تجربة المستخدم (UX/UI) لخلق مواقع تفاعلية ومتناسبة مع جميع الأجهزة.
+            
+            أسعى دائمًا لتقديم حلول رقمية مبتكرة، سواء من خلال مواقع أعمال، أو متاجر إلكترونية، أو تطبيقات ويب تفاعلية، مع التركيز على التفاصيل، والجودة، ورضا العميل.          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 animate-slide-in">
+            <div class="flex flex-col items-center">
+              <i class="fas fa-lightbulb text-3xl text-blue-500 mb-2 pulse-icon"></i>
+              <p class="text-gray-400">إبداعي</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <i class="fas fa-cogs text-3xl text-blue-500 mb-2 pulse-icon"></i>
+              <p class="text-gray-400">احترافي</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <i class="fas fa-rocket text-3xl text-blue-500 mb-2 pulse-icon"></i>
+              <p class="text-gray-400">مبتكر</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Background Section -->
+  <section id="education" class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-4xl font-bold text-white mb-4 text-center">خلفيتي التعليمية</h2>
+      <p class="text-lg text-gray-400 mb-12 text-center max-w-2xl mx-auto">
+        مسيرتي الأكاديمية التي شكلت أساس معرفتي في مجال تطوير الواجهات الأمامية وتصميم تجربة المستخدم.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="education-item bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/50 transition-all duration-300 tilt-card">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-graduation-cap text-3xl text-blue-500 mr-3 pulse-icon"></i>
+            <h3 class="text-xl font-semibold text-white">بكالوريوس تكنولوجيا التعليم والمعلومات</h3>
+          </div>
+          <p class="text-gray-400 mb-2">جامعة [جنوب الوادي] </p>
+          <p class="text-gray-400">درست أسس تكنولوجيا المعلومات، تصميم البرمجيات، وتطوير الويب، مع التركيز على تجربة المستخدم والتصميم الجرافيكي .</p>
+        </div>
+        <div class="education-item bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/50 transition-all duration-300 tilt-card">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-certificate text-3xl text-blue-500 mr-3 pulse-icon"></i>
+            <h3 class="text-xl font-semibold text-white">دورات تطوير الويب المتقدمة</h3>
+          </div>
+          <p class="text-gray-400 mb-2">National Telecommunication Institute | NTI</p>
+          <p class="text-gray-400">أكملت دورات في Html & Css and Bootstrap and JavaScript .</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Skills Section -->
+  <section id="experience-skills" class="py-16 bg-gray-950">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-4xl font-bold text-white mb-4 text-center">خبراتي ومهاراتي</h2>
+      <p class="text-lg text-gray-400 mb-12 text-center max-w-2xl mx-auto">
+        خبرات عملية ومهارات تقنية تمكنني من تقديم حلول رقمية متميزة.
+      </p>
+      <!-- Experience -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-semibold text-white mb-8 text-center">الخبرات العملية</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="experience-item bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/50 transition-all duration-300 tilt-card">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-briefcase text-3xl text-blue-500 mr-3 pulse-icon"></i>
+              <h4 class="text-xl font-semibold text-white">مطور واجهات أمامية - عمل حر</h4>
+            </div>
+            <p class="text-gray-400 mb-2">2022 - الحاضر</p>
+            <p class="text-gray-400">تطوير مواقع ويب متجاوبة لعملاء دوليين باستخدام HTML & Css and Bootstrap and JavaScript</p>
+          </div>
+          <div class="experience-item bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/50 transition-all duration-300 tilt-card">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-code text-3xl text-blue-500 mr-3 pulse-icon"></i>
+              <h4 class="text-xl font-semibold text-white">مصمم ومطور Wordpress</h4>
+            </div>
+            <p class="text-gray-400 mb-2">2023 - الحاضر</p>
+            <p class="text-gray-400">تطوير مواقع احترافية باستخدام WordPress مع تخصيص كامل للتصميم والوظائف حسب احتياجات العميل.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Skills -->
+      <h3 class="text-2xl font-semibold text-white mb-8 text-center">المهارات التقنية</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="skill-item">
+          <div class="flex items-center mb-4">
+            <i class="fa-brands fa-html5 text-3xl text-blue-500 mr-3 pulse-icon"></i>&nbsp;&nbsp;&nbsp;
+            <h4 class="text-xl font-semibold text-white">HTML & CSS</h4>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-3">
+            <div class="bg-blue-500 h-3 rounded-full skill-progress" style="width: 0" data-progress="95"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="flex items-center mb-4">
+            <i class="fab fa-js text-3xl text-blue-500 mr-3 pulse-icon"></i>&nbsp;&nbsp;&nbsp;
+            <h4 class="text-xl font-semibold text-white">JavaScript</h4>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-3">
+            <div class="bg-blue-500 h-3 rounded-full skill-progress" style="width: 0" data-progress="80"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="flex items-center mb-4">
+            <i class="fa-brands fa-bootstrap text-3xl text-blue-500 light:text-blue-600 mr-3 pulse-icon"></i>&nbsp;&nbsp;&nbsp;
+            <h4 class="text-xl font-semibold text-white">Bootstrap & Tailwind</h4>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-3">
+            <div class="bg-blue-500 h-3 rounded-full skill-progress" style="width: 0" data-progress="85"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="flex items-center mb-4">
+            <i class="fa-brands fa-wordpress text-3xl text-blue-500 light:text-blue-600 mr-3 pulse-icon"></i>&nbsp;&nbsp;&nbsp;
+            <h4 class="text-xl font-semibold text-white">Wordpress</h4>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-3">
+            <div class="bg-blue-500 h-3 rounded-full skill-progress" style="width: 0" data-progress="90"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="flex items-center mb-4">
+            <i class="fa-brands fa-figma text-3xl text-blue-500 mr-3 pulse-icon"></i>&nbsp;&nbsp;&nbsp;
+            <h4 class="text-xl font-semibold text-white">Figma</h4>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-3">
+            <div class="bg-blue-500 h-3 rounded-full skill-progress" style="width: 0" data-progress="80"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="flex items-center mb-4">
+            <i class="fa-brands fa-github text-3xl text-blue-500 mr-3 pulse-icon"></i>&nbsp;&nbsp;&nbsp;
+            <h4 class="text-xl font-semibold text-white">GitHub</h4>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-3">
+            <div class="bg-blue-500 h-3 rounded-full skill-progress" style="width: 0" data-progress="90"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision/Work Style Section -->
+  <section id="vision" class="py-16 bg-gradient-to-r from-gray-950 to-blue-950">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-4xl font-bold text-white mb-4 text-center">رؤيتي وأسلوبي في العمل</h2>
+      <p class="text-lg text-gray-400 mb-12 text-center max-w-2xl mx-auto">
+        أؤمن بأن التصميم والتطوير يجب أن يجمع بين الإبداع والوظائفية لتقديم تجارب رقمية لا تُنسى.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="vision-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/50 transition-all duration-300 tilt-card">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-lightbulb text-5xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-white mb-3 text-center">الإبداع</h3>
+          <p class="text-gray-400 text-center">تصميم حلول مبتكرة تتجاوز توقعات العملاء من خلال واجهات جذابة.</p>
+        </div>
+        <div class="vision-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/50 transition-all duration-300 tilt-card">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-cogs text-5xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-white mb-3 text-center">الكفاءة</h3>
+          <p class="text-gray-400 text-center">كود نظيف وأداء عالٍ لضمان تجربة مستخدم سلسة ومستدامة.</p>
+        </div>
+        <div class="vision-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/50 transition-all duration-300 tilt-card">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-users text-5xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-white mb-3 text-center">التركيز على العميل</h3>
+          <p class="text-gray-400 text-center">فهم احتياجات العميل لتقديم حلول مخصصة تحقق أهدافه.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements & Certifications Section -->
+  <section id="achievements" class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-4xl font-bold text-white mb-4 text-center">الإنجازات والشهادات</h2>
+      <p class="text-lg text-gray-400 mb-12 text-center max-w-2xl mx-auto">
+        بعض من إنجازاتي وشهاداتي التي تعكس التزامي بالتطوير المستمر والتميز.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="achievement-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/50 transition-all duration-300 tilt-card">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-trophy text-5xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-white mb-3 text-center">جائزة أفضل تصميم ويب</h3>
+          <p class="text-gray-400 text-center">حصلت على جائزة أفضل تصميم ويب في NTI .</p>
+        </div>
+        <div class="achievement-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/50 transition-all duration-300 tilt-card">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-certificate text-5xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-white mb-3 text-center">شهادة Web Design المعتمدة</h3>
+          <p class="text-gray-400 text-center">أكملت شهادة Web Design من NTI</p>
+        </div>
+        <div class="achievement-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/50 transition-all duration-300 tilt-card">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-project-diagram text-5xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-white mb-3 text-center">إكمال 35+ مشروعًا</h3>
+          <p class="text-gray-400 text-center">نجحت في تسليم أكثر من 35 مشروع ويب لعملاء من مختلف القطاعات.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section id="cta" class="py-16 bg-gray-950">
+    <div class="container mx-auto px-4 max-w-7xl text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">هل أنت جاهز لتحقيق فكرتك؟</h2>
+      <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+        دعنا نعمل معًا لإنشاء تجربة رقمية لا تُنسى. تواصل معي الآن!
+      </p>
+      <a href="contact.html" class="bg-blue-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-600 transition-all duration-300 glow-btn pulse-btn">
+        ابدأ الآن
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-12">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center md:text-right">
+          <h3 class="text-2xl font-bold text-white mb-4">Ziad Hagagy</h3>
+          <p class="text-gray-400">أصنع مواقع تتحدث بلغة المستخدم. مطور واجهات أمامية بخبرة تفوق ثلاث أعوام في تقديم حلول رقمية ذكية تعزز من حضورك الرقمي وتحقق أهدافك.</p>
+        </div>
+        <div class="text-center">
+          <h3 class="text-xl font-semibold text-white mb-4">روابط سريعة</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-blue-500">الرئيسية</a></li>
+            <li><a href="about.html" class="text-blue-500 hover:text-blue-500 font-bold">نبذة عني</a></li>
+            <li><a href="services.html" class="text-gray-400 hover:text-blue-500">الخدمات</a></li>
+            <li><a href="projects.html" class="text-gray-400 hover:text-blue-500">أعمالي</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-blue-500">التواصل</a></li>
+            <li><a href="evaluation.html" class="text-gray-400 hover:text-blue-500">التقييم</a></li>
+          </ul>
+        </div>
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-semibold text-white mb-4">تواصلوا معي</h3>
+          <p class="text-gray-400 mb-2">البريد: <a href="mailto:ziad.hagagy.tech@gmail.com" class="text-blue-500 hover:underline">ziad.hagagy.tech@gmail.com</a></p>
+          <p class="text-gray-400 mb-4">الهاتف: <a href="tel:+201027888008" class="text-blue-500 hover:underline">+201027888008</a></p>
+          <div class="flex justify-center md:justify-start space-x-4 space-x-reverse">
+            <a href="https://www.linkedin.com/in/ziad-hagagy/" class="text-gray-400 hover:text-blue-500"><i class="fab fa-linkedin text-2xl"></i></a>
+            <a href="https://www.facebook.com/ZiadHassaann" class="text-gray-400 hover:text-blue-500"><i class="fa-brands fa-facebook text-2xl"></i></a>
+            <a href="https://wa.me/+201027888008" class="text-gray-400 hover:text-blue-500"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-gray-400">
+        <p>© 2025 زياد حجاجي. جميع الحقوق محفوظة.</p>
+      </div>
+      <button class="back-to-top fixed bottom-4 left-4 bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-all duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script src="about.js"></script>
+</body>
+</html>

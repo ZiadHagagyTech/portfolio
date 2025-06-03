@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Projects | Ziad Hagagy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <link rel="icon" href="./img/ziad.png" type="image/png">
+  <link rel="stylesheet" href="projects.css">
+</head>
+<body class="bg-gray-950 text-white">
+  <!-- Navbar -->
+  <nav class="navbar fixed top-0 left-0 w-full z-40 py-4 bg-gray-950 bg-opacity-80 backdrop-blur-md transition-all duration-300">
+    <div class="container mx-auto px-4 max-w-7xl flex justify-between items-center">
+      <a href="index.html" class="relative flex items-center logo">
+        <span class="text-3xl font-bold text-white hover:text-blue-500 transition-transform duration-300">Ziad Hagagy</span>
+      </a>
+      <ul class="hidden lg:flex space-x-8 space-x-reverse items-center">
+        <li><a href="index.html" class="nav-link text-white hover:text-blue-500 transition-all duration-300 relative">الرئيسية</a></li>
+        <li><a href="about.html" class="nav-link text-white hover:text-blue-500 transition-all duration-300 relative">نبذة عني</a></li>
+        <li><a href="services.html" class="nav-link text-white hover:text-blue-500 transition-all duration-300 relative">الخدمات</a></li>
+        <li><a href="projects.html" class="nav-link text-blue-500 hover:text-blue-500 transition-all duration-300 relative font-bold">أعمالي</a></li>
+        <li><a href="contact.html" class="nav-link text-white hover:text-blue-500 transition-all duration-300 relative">التواصل</a></li>
+        <li><a href="evaluation.html" class="nav-link text-white hover:text-blue-500 transition-all duration-300 relative">التقييم</a></li>
+      </ul>
+      <button class="hamburger lg:hidden text-white focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+      
+      <div class="mobile-menu fixed top-0 right-0 w-full sm:w-3/4 h-full bg-gray-900 p-8 transform translate-x-full transition-transform duration-500 lg:hidden z-50">
+        <button class="close-menu text-white focus:outline-none mb-8">
+          <i class="fas fa-times text-2xl"></i>
+        </button>
+        <ul class="flex flex-col space-y-6 bg-gray-700 p-4 rounded-lg"> <!-- اللون الرمادي هنا -->
+          <li><a href="index.html" class="nav-link text-white hover:text-blue-500 text-lg font-semibold">الرئيسية</a></li>
+          <li><a href="about.html" class="nav-link text-white hover:text-blue-500 text-lg font-semibold">نبذة عني</a></li>
+          <li><a href="services.html" class="nav-link text-white hover:text-blue-500 text-lg font-semibold">الخدمات</a></li>
+          <li><a href="projects.html" class="nav-link text-blue-500 hover:text-blue-500 text-lg font-semibold">أعمالي</a></li>
+          <li><a href="contact.html" class="nav-link text-white hover:text-blue-500 text-lg font-semibold">التواصل</a></li>
+          <li><a href="evaluation.html" class="nav-link text-white hover:text-blue-500 text-lg font-semibold">التقييم</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="projects-hero" class="hero min-h-screen flex items-center relative overflow-hidden">
+    <div id="particles-js" class="absolute inset-0 z-0"></div>
+    <div class="container mx-auto px-4 max-w-7xl flex flex-col items-center justify-center relative z-10 text-center">
+      <p class="text-lg text-green-500 mb-4">إبداعاتي الرقمية</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">معرض أعمال زياد حجاجي</h1>
+      <p class="text-xl text-gray-300 mb-6">
+        <span id="typed-text" class="font-semibold text-blue-500"></span>
+      </p>
+      <p class="text-base sm:text-lg text-gray-400 mb-8 max-w-2xl">
+        اكتشف مجموعة من المشاريع التي تجمع بين الإبداع والتقنية لتحقيق تجارب رقمية استثنائية.
+      </p>
+      <a href="#projects" class="bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-600 transition-all duration-300 glow-btn pulse-btn">
+        استعرض أعمالي
+      </a>
+      <!-- Social Icons -->
+      <div class="fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col space-y-4 z-20">
+        <a href="https://www.linkedin.com/in/ziad-hagagy/" class="social-icon text-gray-400 hover:text-blue-500 transition-all duration-300">
+          <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+        <a href="https://www.facebook.com/ZiadHassaann" class="social-icon text-gray-400 hover:text-blue-500 transition-all duration-300">
+          <i class="fa-brands fa-facebook text-2xl"></i>
+        </a>
+        <a href="https://wa.me/+201027888008" class="social-icon text-gray-400 hover:text-blue-500 transition-all duration-300">
+          <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-4xl font-bold text-white mb-4 text-center">مشاريعي</h2>
+      <p class="text-lg text-gray-400 mb-8 text-center max-w-2xl mx-auto">
+        تصفح أعمالي المتنوعة، مع إمكانية تصفيتها حسب الفئة لاستكشاف إبداعاتي.
+      </p>
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button class="filter-btn bg-blue-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-600 transition-all duration-300 active" data-filter="all">الكل</button>
+        <button class="filter-btn bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-600 transition-all duration-300" data-filter="frontend">متاجر الكترونية</button>
+        <button class="filter-btn bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-600 transition-all duration-300" data-filter="Graduation projects">مشاريع تخرج</button>
+        <button class="filter-btn bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-600 transition-all duration-300" data-filter="administration">برامج إدارة - محاسبة</button>
+        <button class="filter-btn bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-600 transition-all duration-300" data-filter="performance">حسب الطلب</button>
+        <button class="filter-btn bg-gray-800 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-600 transition-all duration-300" data-filter="other">أخري</button>
+      </div>
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 project-grid">
+        <div class="project-card bg-gray-800 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in" data-category="other">
+          <img src="./Landing/img/1/11.png" loading="lazy" alt="طقسي الذكي" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white mb-2">Taqsi</h3>
+            <p class="text-gray-400 mb-4">"طقسي" هو موقع طقس ذكي متطور مصمم لتقديم تجربة فريدة ومتكاملة لمتابعة الأحوال الجوية بدقة وسهولة. يجمع الموقع بين التصميم العصري والوظائف المتقدمة لتلبية احتياجات المستخدمين بمختلف مستوياتهم.
+            </p>
+            <a href="./Landing/landing1.html"><p style="color: #3b82f6; text-align: center; border: #3b82f6 dotted;">عرض تفاصيل الموقع</p></a> 
+          </div>
+        </div>
+        <div class="project-card bg-gray-800 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in" data-category="frontend">
+          <img src="./img/pr2.png" loading="lazy" alt="متجر إلكتروني" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white mb-2">Tech Plus Store</h3>
+            <p class="text-gray-400 mb-4">تطوير متجر إلكتروني بتقنيات حديثة ليوفر أداء ممتاز، تجربة مستخدم قوية، وتصميم مخصص يعكس هوية البراند</p>
+            <a href="./Landing/landing2.html"><p style="color: #3b82f6; text-align: center; border: #3b82f6 dotted;">عرض تفاصيل الموقع</p></a> 
+          </div>
+        </div>
+        <div class="project-card bg-gray-800 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in" data-category="administration">
+          <img src="./img/pr3.png" loading="lazy" alt="تطبيق تعليمي" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white mb-2">Print Manager</h3>
+            <p class="text-gray-400 mb-4">نظام إلكتروني لإدارة شركة طباعة يوفّر إدارة شاملة للطلبات، حسابات العملاء، وتتبع الطباعة والتكاليف بشكل آلي. يشمل لوحة تحكم للفواتير والتقارير لتحسين الكفاءة وتنظيم العمل باحترافية.</p>
+            <a href="./Landing/landing3.html"><p style="color: #3b82f6; text-align: center; border: #3b82f6 dotted;">عرض تفاصيل الموقع</p></a>
+          </div>
+        </div>
+        <div class="project-card bg-gray-800 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in" data-category="performance">
+          <img src="./img/pr5.png" loading="lazy" alt="تحسين موقع" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white mb-2">موقع حضانة جيل الفرقان</h3>
+            <p class="text-gray-400 mb-4">موقع حضانة جيل الفرقان هو منصة إلكترونية تقدم معلومات شاملة عن الحضانة وخدماتها، وتتيح لأولياء الأمور التسجيل لأطفالهم وإنشاء حسابات لمتابعة حالة الطفل، جدوله، وتقارير التقييم. يتميز الموقع بواجهة سهلة الاستخدام وتصميم متجاوب يدعم جميع الأجهزة.</p>
+            <a href="#"><p style="color: #3b82f6; text-align: center; border: #3b82f6 dotted;">عرض تفاصيل الموقع</p></a>
+          </div>
+        </div>
+        <div class="project-card bg-gray-800 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in" data-category="Graduation projects">
+          <img src="./img/pr1.png" loading="lazy" alt="لوحة تحكم" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white mb-2">نظام انشاء كارنيهات الكتروني - كلية الاداب</h3>
+            <p class="text-gray-400 mb-4">تطوير نظام ويب لإنشاء الكارنيهات الإلكترونية لطلاب كلية الآداب - جامعة جنوب الوادي، يتضمن لوحة تحكم متكاملة مع ربط بقاعدة بيانات لعرض بيانات الطالب وتوليد الكارنيه تلقائيًا. يتيح النظام تحميل الكارنيه كصورة، مع تصميم متجاوب وتجربة استخدام سهلة.</p>
+            <a href="./Landing/landing5.html"><p style="color: #3b82f6; text-align: center; border: #3b82f6 dotted;">عرض تفاصيل الموقع</p></a>
+          </div>
+        </div>
+        <div class="project-card bg-gray-800 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in" data-category="administration">
+          <img src="./img/pr4.png" loading="lazy" alt="تطبيق موبايل" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white mb-2">نظام البحث عن نتائج الفائزين بمسابقة جيل الفرقان</h3>
+            <p class="text-gray-400 mb-4">نظام إدارة يعتمد على قاعدة بيانات ديناميكية لتتبع نتائج الطلاب، بشكل آلي وسهل من خلال لوحة تحكم متجاوبة.
+            <a href="./Landing/landing6.html"><p style="color: #3b82f6; text-align: center; border: #3b82f6 dotted;">عرض تفاصيل الموقع</p></a>
+            </p>
+          </div>
+        </div>
+        <div class="project-card bg-gray-800 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in" data-category="performance">
+          <img src="./img/pr6.png" loading="lazy" alt="موقع شركة" class="w-full h-48 object-cover rounded-t-xl">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white mb-2">موقع إدارة المهام</h3>
+            <p class="text-gray-400 mb-4">موقع إدارة المهام هو منصة تساعد المستخدمين في تنظيم مهامهم اليومية، تحديد أولوياتها، وتقسيم المهام الكبيرة إلى مهام فرعية. يوفر إشعارات ذكية، إضافة ملاحظات، ومواعيد نهائية، مع تصميم متجاوب يتيح الوصول إلى المهام من أي جهاز لتحسين الإنتاجية وإدارة الوقت.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Stats Section -->
+  <section id="project-stats" class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-4xl font-bold text-white mb-4 text-center">إحصائيات المشاريع</h2>
+      <p class="text-lg text-gray-400 mb-12 text-center max-w-2xl mx-auto">
+        أرقام تعكس حجم العمل والإبداع في مشاريعي.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="stat-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-clock text-4xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-3xl font-bold text-white mb-2 text-center counter" data-target="1000">0</h3>
+          <p class="text-gray-400 text-center">ساعة عمل</p>
+        </div>
+        <div class="stat-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-cogs text-4xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-3xl font-bold text-white mb-2 text-center counter" data-target="30">0</h3>
+          <p class="text-gray-400 text-center">تقنيات مستخدمة</p>
+        </div>
+        <div class="stat-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-thumbs-up text-4xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-3xl font-bold text-white mb-2 text-center counter" data-target="99">0</h3>
+          <p class="text-gray-400 text-center">نسبة رضا العملاء</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards & Certifications Section -->
+  <section id="awards" class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-4xl font-bold text-white mb-4 text-center">جوائز وشهادات</h2>
+      <p class="text-lg text-gray-400 mb-12 text-center max-w-2xl mx-auto">
+        إنجازاتي المعتمدة التي تعكس التزامي بالتميز.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="award-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-award text-4xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2 text-center">جائزة أفضل تصميم ويب</h3>
+          <p class="text-gray-400 text-center">حصلت على جائزة أفضل تصميم ويب في NTI .</p>
+        </div>
+        <div class="award-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-certificate text-4xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-white mb-3 text-center">شهادة Web Design المعتمدة</h3>
+          <p class="text-gray-400 text-center">أكملت شهادة Web Design من NTI</p>
+        </div>
+        <div class="award-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-trophy text-4xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-white mb-3 text-center">إكمال 20+ مشروعًا</h3>
+          <p class="text-gray-400 text-center">نجحت في تسليم أكثر من 20 مشروع ويب لعملاء من مختلف القطاعات.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="py-16 bg-gradient-to-r from-gray-950 to-blue-950">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-4xl font-bold text-white mb-4 text-center">إنجازاتي</h2>
+      <p class="text-lg text-gray-400 mb-12 text-center max-w-2xl mx-auto">
+        أرقام تتحدث عن رحلتي في تقديم حلول رقمية مبتكرة.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="achievement-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-project-diagram text-4xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-3xl font-bold text-white mb-2 text-center counter" data-target="35">0</h3>
+          <p class="text-gray-400 text-center">مشروع منجز</p>
+        </div>
+        <div class="achievement-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-users text-4xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-3xl font-bold text-white mb-2 text-center counter" data-target="100">0</h3>
+          <p class="text-gray-400 text-center">عميل راضٍ</p>
+        </div>
+        <div class="achievement-card bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-blue-500/70 transition-all duration-300 animate-slide-in">
+          <div class="flex justify-center mb-4">
+            <i class="fas fa-clock text-4xl text-blue-500 pulse-icon"></i>
+          </div>
+          <h3 class="text-3xl font-bold text-white mb-2 text-center counter" data-target="3">0</h3>
+          <p class="text-gray-400 text-center">سنوات خبرة</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section id="cta" class="py-16 bg-gradient-to-r from-gray-950 to-blue-950">
+    <div class="container mx-auto px-4 max-w-7xl text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">هل تريد إنشاء مشروع استثنائي؟</h2>
+      <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+        تواصل معي اليوم لنبدأ في تحويل رؤيتك إلى تجربة رقمية لا تُنسى!
+      </p>
+      <a href="contact.html" class="bg-blue-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-700 transition-all duration-300 glow-btn pulse-btn">
+        ابدأ مشروعك الآن
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-12">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center md:text-right">
+          <h3 class="text-2xl font-bold text-white mb-4">زياد حجاجي</h3>
+          <p class="text-gray-400">أصنع مواقع تتحدث بلغة المستخدم. مطور واجهات أمامية بخبرة تفوق ثلاث أعوام في تقديم حلول رقمية ذكية تعزز من حضورك الرقمي وتحقق أهدافك.</p>
+        </div>
+        <div class="text-center">
+          <h3 class="text-xl font-semibold text-white mb-4">روابط سريعة</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-blue-500">الرئيسية</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-blue-500">نبذة عني</a></li>
+            <li><a href="services.html" class="text-gray-400 hover:text-blue-500">الخدمات</a></li>
+            <li><a href="projects.html" class="text-blue-500 hover:text-blue-500 font-bold">أعمالي</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-blue-500">التواصل</a></li>
+            <li><a href="evaluation.html" class="text-gray-400 hover:text-blue-500">التقييم</a></li>
+          </ul>
+        </div>
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-semibold text-white mb-4">تواصلوا معي</h3>
+          <p class="text-gray-400 mb-2">البريد: <a href="mailto:ziad.hagagy.tech@gmail.com" class="text-blue-500 hover:underline">ziad.hagagy.tech@gmail.com</a></p>
+          <p class="text-gray-400 mb-4">الهاتف: <a href="tel:+201027888008" class="text-blue-500 hover:underline">+201027888008</a></p>
+          <div class="flex justify-center md:justify-start space-x-4 space-x-reverse">
+            <a href="https://www.linkedin.com/in/ziad-hagagy/" class="text-gray-400 hover:text-blue-500"><i class="fab fa-linkedin text-2xl"></i></a>
+            <a href="https://www.facebook.com/ZiadHassaann" class="text-gray-400 hover:text-blue-500"><i class="fa-brands fa-facebook text-2xl"></i></a>
+            <a href="https://wa.me/+201027888008" class="text-gray-400 hover:text-blue-500"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-gray-400">
+        <p>© 2025 زياد حجاجي. جميع الحقوق محفوظة.</p>
+      </div>
+      <button class="back-to-top fixed bottom-4 left-4 bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-all duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script defer src="projects.js"></script>
+</body>
+</html>
