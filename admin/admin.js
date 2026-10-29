@@ -109,6 +109,12 @@
     if(base)doc.head.prepend(base);if(bridgeNode&&parent)parent.insertBefore(bridgeNode,next);
     return output;
   }
+  $("#createPullRequest").addEventListener("click",async()=>{
+    const btn=$("#createPullRequest");btn.disabled=true;
+    try{const result=await api("/api/pull-request",{method:"POST",body:JSON.stringify({})});showToast(result.existing?tr("يوجد طلب مراجعة مفتوح بالفعل","An open review already exists"):tr("تم إنشاء طلب المراجعة","Review request created"));if(result.url)window.open(result.url,"_blank","noopener,noreferrer");}
+    catch(err){showToast(err.message||tr("تعذر إنشاء طلب المراجعة","Could not create review request"))}
+    finally{btn.disabled=false}
+  });
   $("#saveToGithub").addEventListener("click",async()=>{
     const btn=$("#saveToGithub"),msg=$("#saveMessage");btn.disabled=true;setMessage(msg,tr("جارٍ حفظ الملف في فرع التطوير…","Saving file to development branch…"));
     try{const content=getEditedHtml();const data=await api("/api/file",{method:"PUT",body:JSON.stringify({path:currentPath,content,message:$("#commitMessage").value||"Update "+currentPath})});currentHtml=content;setMessage(msg,tr("تم الحفظ في GitHub. Commit: ","Saved to GitHub. Commit: ")+(data.commit||"OK"),true);showToast(tr("تم حفظ التغييرات في فرع التطوير","Changes saved to development branch"))}
