@@ -1,0 +1,7 @@
+name = "ziad-portfolio-studio-api"
+main = "src/index.js"
+compatibility_date = "2026-10-29"
+
+[vars]
+GITHUB_REPOSITORY = "ZiadHagagyTech/portfolio"
+ALLOWED_ORIGIN = "https://ziadhagagytech.github.io"
