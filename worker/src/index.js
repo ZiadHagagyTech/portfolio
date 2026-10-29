@@ -124,6 +124,25 @@ export default {
         return json({ path, content, sha: file.sha, branch: BRANCH }, 200, origin);
       } catch (error) { return json({ error: error.message }, 502, origin); }
     }
+    if (url.pathname === "/api/pull-request" && request.method === "POST") {
+      try {
+        const existing = await githubRequest(env, "/pulls?state=open&head=" + encodeURIComponent(env.GITHUB_REPOSITORY.split("/")[0] + ":" + BRANCH) + "&base=main");
+        if (Array.isArray(existing) && existing.length) {
+          return json({ ok: true, url: existing[0].html_url, number: existing[0].number, existing: true }, 200, origin);
+        }
+        const result = await githubRequest(env, "/pulls", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            title: "Review portfolio visual editor changes",
+            head: BRANCH,
+            base: "main",
+            body: "Please review the portfolio updates from Portfolio Studio before merging. Check desktop/mobile layouts, links, and page scripts."
+          })
+        });
+        return json({ ok: true, url: result.html_url, number: result.number, existing: false }, 200, origin);
+      } catch (error) { return json({ error: error.message }, 502, origin); }
+    }
     if (url.pathname === "/api/file" && request.method === "PUT") {
       const body = await request.json().catch(() => ({}));
       const path = body.path;
