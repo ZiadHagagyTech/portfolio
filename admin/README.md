@@ -9,7 +9,7 @@ This dashboard is being developed on `feature/visual-admin-cms`. It does not use
 - Preview-based text/link edits and basic inline styling.
 - Section reordering in the preview.
 - Saves only to `feature/visual-admin-cms`, never directly to `main`.
-- The API Worker restricts writes to the six known HTML pages and keeps the GitHub token on the server side.
+- The API Worker restricts page writes to the six known HTML pages, can open/reuse a review Pull Request, and keeps the GitHub token on the server side.
 
 This is the first working foundation, not yet a full arbitrary block/page builder. New section templates, image uploads, richer responsive controls, and review/publish automation should be built and tested in follow-up commits.
 
@@ -19,7 +19,7 @@ This is the first working foundation, not yet a full arbitrary block/page builde
 2. Configure these secrets on the Worker:
    - `ADMIN_PASSWORD`: a long, unique admin password.
    - `SESSION_SECRET`: a random secret with at least 32 characters.
-   - `GITHUB_TOKEN`: a fine-grained GitHub token limited to this repository, with **Contents: Read and write** permission. Do not commit this token into the repository or put it in browser JavaScript.
+   - `GITHUB_TOKEN`: a fine-grained GitHub token limited to this repository, with **Contents: Read and write** and **Pull requests: Read and write** permissions. Do not commit this token into the repository or put it in browser JavaScript.
 3. The variable `GITHUB_REPOSITORY` is already set to `ZiadHagagyTech/portfolio`.
 4. Set `ALLOWED_ORIGIN` to the exact origin serving the admin page, with no trailing slash. Example: `https://ziadhagagytech.github.io`. If the site uses a custom domain, use that origin instead. Do not use `*` for a deployed admin site.
 5. Deploy and copy the Worker URL.
@@ -43,7 +43,7 @@ In `admin/admin.js`, replace `https://YOUR-WORKER-NAME.YOUR-SUBDOMAIN.workers.de
 
 - Ensure GitHub Pages is configured for the intended production source before expecting live site updates.
 - The dashboard saves edits to `feature/visual-admin-cms` only.
-- Review changes on that branch, then open a Pull Request to `main`. Merge only after reviewing the diff and checking the site.
+- Use “Create publish review” to open or reuse a Pull Request to `main`. Merge only after reviewing the diff and checking the site. The Worker never merges automatically.
 - The dashboard should not be treated as production-ready until the Worker URL, secrets, allowed origin, authentication, and page preview are tested in the actual hosting environment.
 
 ## Security notes
