@@ -1,7 +1,7 @@
 (() => {
   "use strict";
   const $ = (s) => document.querySelector(s);
-  const API_BASE = "https://YOUR-WORKER-NAME.YOUR-SUBDOMAIN.workers.dev";
+  const API_BASE = "https://ziad-portfolio-studio-api.ziad-hagagy-tech.workers.dev";
   const BRANCH = "feature/visual-admin-cms";
   const ALLOWED_PAGES = ["index.html","about.html","services.html","projects.html","contact.html","evaluation.html"];
   let token = "";
