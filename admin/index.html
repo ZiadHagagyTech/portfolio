@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Portfolio Studio | Ziad Hagagy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+  <div id="loginScreen" class="login-screen">
+    <form id="loginForm" class="login-card">
+      <div class="brand-mark">ZH</div>
+      <p class="eyebrow">ZIAD HAGAGY · PORTFOLIO STUDIO</p>
+      <h1 data-ar="تسجيل الدخول" data-en="Sign in">تسجيل الدخول</h1>
+      <p class="muted" data-ar="سجّل الدخول لإدارة محتوى وتصميم موقعك." data-en="Sign in to manage your portfolio content and design.">سجّل الدخول لإدارة محتوى وتصميم موقعك.</p>
+      <label for="adminPassword" data-ar="كلمة مرور الإدارة" data-en="Admin password">كلمة مرور الإدارة</label>
+      <input id="adminPassword" type="password" autocomplete="current-password" required placeholder="••••••••••">
+      <button class="primary full" type="submit" data-ar="دخول آمن" data-en="Secure sign in">دخول آمن</button>
+      <p id="loginMessage" class="message" role="status"></p>
+      <p class="small muted" data-ar="يتطلب إعداد Cloudflare Worker أولًا. لا تضع أي GitHub Token هنا." data-en="Cloudflare Worker setup is required. Never put a GitHub token here.">يتطلب إعداد Cloudflare Worker أولًا. لا تضع أي GitHub Token هنا.</p>
+    </form>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="side-brand"><div class="brand-mark small-mark">ZH</div><div><strong>Portfolio Studio</strong><span>ZIAD HAGAGY</span></div></div>
+      <div class="side-label" data-ar="مساحة العمل" data-en="WORKSPACE">مساحة العمل</div>
+      <button class="nav-item active" data-panel="editor"><span>✦</span><span data-ar="المحرر البصري" data-en="Visual editor">المحرر البصري</span></button>
+      <button class="nav-item" data-panel="publish"><span>⇧</span><span data-ar="الحفظ والنشر" data-en="Save & publish">الحفظ والنشر</span></button>
+      <div class="sidebar-bottom"><span class="online-dot"></span><span data-ar="متصل بفرع التطوير" data-en="Connected to development branch">متصل بفرع التطوير</span></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><p class="eyebrow" data-ar="إدارة الموقع" data-en="SITE MANAGEMENT">إدارة الموقع</p><h1 data-ar="محرر البورتفوليو" data-en="Portfolio editor">محرر البورتفوليو</h1></div>
+        <div class="top-actions">
+          <span class="branch-chip"><span class="online-dot"></span> feature/visual-admin-cms</span>
+          <button id="languageToggle" class="icon-button" title="Language">EN</button>
+          <button id="themeToggle" class="icon-button" title="Theme">☼</button>
+          <button id="logoutButton" class="quiet-button" data-ar="تسجيل الخروج" data-en="Sign out">تسجيل الخروج</button>
+        </div>
+      </header>
+
+      <section id="editorPanel" class="panel">
+        <div class="toolbar">
+          <div class="toolbar-group">
+            <label for="pageSelect" data-ar="الصفحة" data-en="Page">الصفحة</label>
+            <select id="pageSelect">
+              <option value="index.html">الرئيسية · index.html</option>
+              <option value="about.html">نبذة عني · about.html</option>
+              <option value="services.html">الخدمات · services.html</option>
+              <option value="projects.html">أعمالي · projects.html</option>
+              <option value="contact.html">التواصل · contact.html</option>
+              <option value="evaluation.html">التقييم · evaluation.html</option>
+            </select>
+            <button id="loadPage" class="secondary" data-ar="فتح الصفحة" data-en="Load page">فتح الصفحة</button>
+          </div>
+          <div class="toolbar-group">
+            <button id="desktopView" class="view-button active" title="Desktop">▰</button>
+            <button id="tabletView" class="view-button" title="Tablet">▯</button>
+            <button id="mobileView" class="view-button" title="Mobile">▯</button>
+            <button id="refreshPreview" class="secondary" data-ar="تحديث المعاينة" data-en="Refresh preview">تحديث المعاينة</button>
+          </div>
+        </div>
+
+        <div class="editor-layout">
+          <section class="preview-column">
+            <div class="preview-heading"><div><strong data-ar="معاينة مباشرة" data-en="Live preview">معاينة مباشرة</strong><span id="previewStatus" class="muted">—</span></div><span class="preview-tip" data-ar="اضغط على أي نص أو عنصر لتحديده" data-en="Click any text or element to select it">اضغط على أي نص أو عنصر لتحديده</span></div>
+            <div id="previewFrameWrap" class="preview-frame-wrap desktop-size"><iframe id="sitePreview" title="Portfolio visual preview" sandbox="allow-scripts allow-forms allow-same-origin allow-popups"></iframe></div>
+          </section>
+
+          <aside class="inspector">
+            <div class="inspector-tabs"><button class="tab active" data-tab="content" data-ar="المحتوى" data-en="Content">المحتوى</button><button class="tab" data-tab="style" data-ar="التصميم" data-en="Style">التصميم</button><button class="tab" data-tab="structure" data-ar="الأقسام" data-en="Sections">الأقسام</button></div>
+            <div id="contentTab" class="inspector-body">
+              <p class="field-kicker" data-ar="العنصر المحدد" data-en="SELECTED ELEMENT">العنصر المحدد</p>
+              <div id="selectedLabel" class="selected-label" data-ar="لم يتم تحديد عنصر" data-en="No element selected">لم يتم تحديد عنصر</div>
+              <label for="textEditor" data-ar="النص" data-en="Text">النص</label>
+              <textarea id="textEditor" rows="5" placeholder="حدد عنصرًا من المعاينة أولًا" disabled></textarea>
+              <label for="linkEditor" data-ar="الرابط (اختياري)" data-en="Link (optional)">الرابط (اختياري)</label>
+              <input id="linkEditor" type="url" placeholder="https://..." disabled>
+              <button id="applyContent" class="secondary full" disabled data-ar="تطبيق التعديل" data-en="Apply changes">تطبيق التعديل</button>
+              <p class="hint" data-ar="يمكنك تعديل النصوص والروابط. استخدم تبويب التصميم للألوان والمسافات، وتبويب الأقسام لإعادة الترتيب." data-en="Edit text and links here. Use Style for colors and spacing, and Sections to reorder sections.">يمكنك تعديل النصوص والروابط. استخدم تبويب التصميم للألوان والمسافات، وتبويب الأقسام لإعادة الترتيب.</p>
+            </div>
+            <div id="styleTab" class="inspector-body hidden">
+              <p class="field-kicker" data-ar="تنسيق العنصر المحدد" data-en="ELEMENT STYLING">تنسيق العنصر المحدد</p>
+              <label for="textColor" data-ar="لون النص" data-en="Text color">لون النص</label><input id="textColor" type="color" value="#ffffff" disabled>
+              <label for="backgroundColor" data-ar="لون الخلفية" data-en="Background color">لون الخلفية</label><input id="backgroundColor" type="color" value="#0a0a0f" disabled>
+              <label for="fontSize" data-ar="حجم الخط (px)" data-en="Font size (px)">حجم الخط (px)</label><input id="fontSize" type="number" min="8" max="120" value="16" disabled>
+              <label for="paddingSize" data-ar="المسافة الداخلية (px)" data-en="Padding (px)">المسافة الداخلية (px)</label><input id="paddingSize" type="number" min="0" max="200" value="0" disabled>
+              <button id="applyStyle" class="secondary full" disabled data-ar="تطبيق التصميم" data-en="Apply styling">تطبيق التصميم</button>
+              <p class="hint" data-ar="التغييرات هنا تضاف كتعديلات مباشرة على العنصر المحدد. راجع المظهر على أحجام الشاشات المختلفة." data-en="Styles are applied directly to the selected element. Check the result at different viewport sizes.">التغييرات هنا تضاف كتعديلات مباشرة على العنصر المحدد. راجع المظهر على أحجام الشاشات المختلفة.</p>
+            </div>
+            <div id="structureTab" class="inspector-body hidden">
+              <div class="structure-header"><div><p class="field-kicker" data-ar="بنية الصفحة" data-en="PAGE STRUCTURE">بنية الصفحة</p><p class="muted small" data-ar="اسحب الأقسام لتغيير ترتيبها" data-en="Drag sections to reorder them">اسحب الأقسام لتغيير ترتيبها</p></div><button id="refreshSections" class="icon-button" title="Refresh">↻</button></div>
+              <div id="sectionsList" class="sections-list"><p class="muted" data-ar="افتح صفحة لعرض أقسامها" data-en="Load a page to see its sections">افتح صفحة لعرض أقسامها</p></div>
+              <p class="hint" data-ar="إضافة أنواع جديدة من الأقسام ومكونات كاملة ستكون ضمن المرحلة التالية من محرر البناء." data-en="Adding new section types and full components is planned for the next builder phase.">إضافة أنواع جديدة من الأقسام ومكونات كاملة ستكون ضمن المرحلة التالية من محرر البناء.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="publishPanel" class="panel hidden">
+        <div class="publish-card"><div class="publish-icon">⇧</div><p class="eyebrow" data-ar="سير عمل آمن" data-en="SAFE WORKFLOW">سير عمل آمن</p><h2 data-ar="احفظ التغييرات في GitHub" data-en="Save changes to GitHub">احفظ التغييرات في GitHub</h2><p class="muted" data-ar="الحفظ يرفع ملف الصفحة إلى فرع التطوير فقط. لا يتم تعديل main مباشرة." data-en="Saving writes the page to the development branch only. The main branch is never edited directly.">الحفظ يرفع ملف الصفحة إلى فرع التطوير فقط. لا يتم تعديل main مباشرة.</p><div class="publish-meta"><span data-ar="الفرع المستهدف" data-en="Target branch">الفرع المستهدف</span><code>feature/visual-admin-cms</code></div><div class="publish-meta"><span data-ar="الملف الحالي" data-en="Current file">الملف الحالي</span><code id="publishPath">index.html</code></div><label for="commitMessage" data-ar="رسالة التغيير" data-en="Commit message">رسالة التغيير</label><input id="commitMessage" value="Update portfolio content from visual editor" maxlength="120"><div class="publish-actions"><button id="saveToGithub" class="primary" disabled data-ar="حفظ التغييرات في GitHub" data-en="Save changes to GitHub">حفظ التغييرات في GitHub</button><button id="createPullRequest" class="secondary" data-ar="إنشاء طلب مراجعة للنشر" data-en="Create publish review">إنشاء طلب مراجعة للنشر</button></div><p id="saveMessage" class="message" role="status"></p></div>
+        <div class="notice-card"><strong data-ar="مهم قبل النشر" data-en="Before publishing">مهم قبل النشر</strong><p data-ar="بعد مراجعة التغييرات على فرع التطوير، يتم دمجها إلى main من خلال Pull Request. ظهورها على الموقع يعتمد على إعداد الاستضافة الحالية في GitHub Pages." data-en="After reviewing the development branch, merge it to main through a Pull Request. Live deployment depends on your current GitHub Pages setup.">بعد مراجعة التغييرات على فرع التطوير، يتم دمجها إلى main من خلال Pull Request. ظهورها على الموقع يعتمد على إعداد الاستضافة الحالية في GitHub Pages.</p></div>
+      </section>
+      <div id="toast" class="toast" role="status"></div>
+      <footer class="app-footer">Portfolio Studio <span>·</span> GitHub workflow <span>·</span> v0.1</footer>
+    </main>
+  </div>
+  <script src="./admin.js"></script>
+</body>
+</html>
