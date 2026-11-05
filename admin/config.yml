@@ -1,0 +1,50 @@
+backend:
+  name: github
+  repo: ZiadHagagyTech/portfolio
+  branch: main
+
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
+
+collections:
+  - name: "projects"
+    label: "المشاريع"
+    files:
+      - name: "projects"
+        label: "قائمة المشاريع"
+        file: "data/projects.json"
+        fields:
+          - label: "المشاريع"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "عنوان المشروع", name: "title", widget: "string" }
+              - { label: "الوصف", name: "description", widget: "text" }
+              - { label: "رابط الصورة", name: "image", widget: "string" }
+              - { label: "رابط التفاصيل", name: "link", widget: "string" }
+              - label: "التصنيف"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "متاجر الكترونية", value: "frontend" }
+                  - { label: "مشاريع تخرج", value: "Graduation projects" }
+                  - { label: "برامج إدارة - محاسبة", value: "administration" }
+                  - { label: "حسب الطلب", value: "performance" }
+                  - { label: "أخرى", value: "other" }
+
+  - name: "services"
+    label: "الخدمات"
+    files:
+      - name: "services"
+        label: "قائمة الخدمات"
+        file: "data/services.json"
+        fields:
+          - label: "الخدمات"
+            name: "services"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "عنوان الخدمة", name: "title", widget: "string" }
+              - { label: "الوصف", name: "description", widget: "text" }
+              - { label: "الأيقونة (Font Awesome)", name: "icon", widget: "string", default: "fas fa-code" }
