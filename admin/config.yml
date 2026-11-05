@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: ZiadHagagyTech/portfolio
+  name: turbo-github
+  turbo_site_id: 76585bd2-4750-4856-a4b3-b82f02e23f12
   branch: main
 
 media_folder: "img/uploads"
